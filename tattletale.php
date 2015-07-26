@@ -18,4 +18,4 @@ function cr_tattletale_post_trashed( $new_status, $old_status, $post ) {
         }
     }
 }
-add_action( 'transition_post_status', 'post_trashed', 10, 3);
+add_action( 'transition_post_status', 'cr_tattletale_post_trashed', 10, 3);
