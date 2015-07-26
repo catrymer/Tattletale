@@ -8,7 +8,7 @@ License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-function post_trashed( $new_status, $old_status, $post ) {
+function cr_tattletale_post_trashed( $new_status, $old_status, $post ) {
     if ( $old_status != 'trash' && $new_status == 'trash' ) {
         $trashy_user = wp_get_current_user();
         if ( $trashy_user->ID != $post->post_author) {
