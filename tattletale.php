@@ -12,9 +12,9 @@ function post_trashed( $new_status, $old_status, $post ) {
     if ( $old_status != 'trash' && $new_status == 'trash' ) {
         $trashy_user = wp_get_current_user();
         if ( $trashy_user->ID != $post->post_author) {
-                $author = get_user_by( 'id', $post->post_author);
-                $author_email = $author->user_email;
-                wp_mail( $author_email, 'Caught Red Handed!!', "$trashy_user->user_login trashed your post. Bastard!" );
+            $author = get_user_by( 'id', $post->post_author);
+            $author_email = $author->user_email;
+            wp_mail( $author_email, 'Caught Red Handed!!', "$trashy_user->user_login trashed your post. Bastard!" );
         }
     }
 }
